@@ -1,12 +1,24 @@
 <div align="center">
-  <img src="docs/assets/mascot.png" alt="Mimicry Mascot" width="250" />
+  <img src="docs/assets/mascot.png" alt="Mimicry Mascot" width="220" />
+
+  # 🪞 Mimicry
+  **Zero-Shot Voice Cloning & TTS Engine**
+
+  <p align="center">
+    <a href="https://python.org/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python Version"/></a>
+    <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-Optimized-EE4C2C.svg?logo=pytorch&logoColor=white" alt="PyTorch"/></a>
+    <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688.svg?logo=fastapi&logoColor=white" alt="FastAPI"/></a>
+    <a href="https://github.com/mrigankad/Mimicry/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/></a>
+    <a href="https://docker.com/"><img src="https://img.shields.io/badge/Docker-Supported-2496ED.svg?logo=docker&logoColor=white" alt="Docker Supported"/></a>
+  </p>
+
+  <p align="center">
+    <em>Upload a 5–30 second audio sample of any person speaking, and generate unlimited new speech in that voice from any text.<br>No training, no GPU required, no cloud dependency. Everything runs locally and privately on your machine.</em>
+  </p>
 </div>
 
-# 🪞 Mimicry — Zero-Shot Voice Cloning
-
-Mimicry is a local, privacy-first voice cloning system. Upload a 5–30 second audio sample of any person speaking, and generate unlimited new speech in that voice from any text — with no training, no GPU required, no cloud dependency. Everything runs on your machine.
-
 ---
+
 
 ## Table of Contents
 
