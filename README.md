@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/mascot.png" alt="Mimicry Mascot" width="250" />
+  <img src="docs/assets/mascot.png" alt="Mimicry Mascot" width="250" />
 </div>
 
 # 🪞 Mimicry — Zero-Shot Voice Cloning
@@ -79,7 +79,7 @@ pip install -r requirements.txt
 start.bat
 
 # Or directly on any OS
-python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
+python -m uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
 
 # 3. Open in browser
 http://localhost:8000
@@ -94,7 +94,7 @@ Both are cached in `~/.cache/huggingface/hub/`. Subsequent starts load in ~5 sec
 ### Verify Installation
 
 ```bash
-python setup_check.py
+python scripts/setup_check.py
 ```
 
 ### With Docker
@@ -112,10 +112,10 @@ Set `MIMICRY_API_KEY` before starting to protect write endpoints:
 
 ```bash
 # Linux/macOS
-MIMICRY_API_KEY=mysecret python -m uvicorn backend.main:app --port 8000
+MIMICRY_API_KEY=mysecret python -m uvicorn backend.app.main:app --port 8000
 
 # Windows
-set MIMICRY_API_KEY=mysecret && python -m uvicorn backend.main:app --port 8000
+set MIMICRY_API_KEY=mysecret && python -m uvicorn backend.app.main:app --port 8000
 ```
 
 Then pass the key in requests:
@@ -290,14 +290,22 @@ All job state is written to SQLite on every status change — jobs survive serve
 Voice Cloning/
 │
 ├── backend/
-│   ├── __init__.py
-│   ├── main.py              # FastAPI app — all routes
-│   ├── voice_engine.py      # VoiceEngine singleton — all AI logic
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py          # FastAPI app — all routes
+│   │   └── voice_engine.py  # VoiceEngine singleton — all AI logic
 │   └── storage/             # Auto-created at runtime
 │       ├── voices/          # {id}.wav + {id}.json per voice
 │       ├── outputs/         # {jobid}.wav + {jobid}.mp3
 │       │   └── history.json # Last 40 synthesis records
 │       └── jobs.db          # SQLite persistent job store
+│
+├── scripts/
+│   ├── build_release.py     # Release packager
+│   └── setup_check.py       # Installation verifier
+│
+├── docs/
+│   └── assets/              # README images
 │
 ├── frontend/
 │   ├── index.html           # Single-page app
@@ -314,8 +322,7 @@ Voice Cloning/
 ├── docker-compose.yml
 ├── .dockerignore
 ├── requirements.txt
-├── start.bat                # Windows launcher
-└── setup_check.py           # Installation verifier
+└── start.bat                # Windows launcher
 ```
 
 ---

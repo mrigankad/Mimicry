@@ -27,7 +27,7 @@ import torch
 
 logger = logging.getLogger(__name__)
 
-_BASE          = Path(__file__).parent / "storage"
+_BASE          = Path(__file__).parent.parent / "storage"
 VOICES_DIR     = _BASE / "voices"
 EMBEDDINGS_DIR = _BASE / "embeddings"
 OUTPUTS_DIR    = _BASE / "outputs"

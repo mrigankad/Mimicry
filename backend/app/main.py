@@ -51,17 +51,17 @@ from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from backend.voice_engine import OUTPUTS_DIR, VOICES_DIR, engine, extract_watermark
+from backend.app.voice_engine import OUTPUTS_DIR, VOICES_DIR, engine, extract_watermark
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s  %(name)s  %(message)s")
 logger = logging.getLogger(__name__)
 
-FRONTEND_DIR      = Path(__file__).parent.parent / "frontend"
+FRONTEND_DIR      = Path(__file__).parent.parent.parent / "frontend"
 ALLOWED_AUDIO_EXT = {".wav", ".mp3", ".m4a", ".ogg", ".webm"}
 
 # ── SQLite job persistence ─────────────────────────────────────────────────
 
-_DB_PATH  = Path(__file__).parent / "storage" / "jobs.db"
+_DB_PATH  = Path(__file__).parent.parent / "storage" / "jobs.db"
 _db_conn: Optional[sqlite3.Connection] = None
 _db_lock  = threading.Lock()
 

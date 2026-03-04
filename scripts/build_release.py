@@ -21,13 +21,14 @@ import zipfile
 from pathlib import Path
 
 VERSION = "1.0.0"
-ROOT    = Path(__file__).parent.resolve()
+ROOT    = Path(__file__).parent.parent.resolve()
 DIST    = ROOT / "dist"
 
 # Files and directories to include in the ZIP archive
 INCLUDE = [
-    "backend/main.py",
-    "backend/voice_engine.py",
+    "backend/app/__init__.py",
+    "backend/app/main.py",
+    "backend/app/voice_engine.py",
     "frontend/index.html",
     "frontend/style.css",
     "frontend/app.js",
@@ -39,7 +40,8 @@ INCLUDE = [
     "requirements.txt",
     "pyproject.toml",
     "start.bat",
-    "setup_check.py",
+    "scripts/setup_check.py",
+    "scripts/build_release.py",
     "README.md",
     "CHANGELOG.md",
     ".gitignore",
