@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# --- Storage (mounted as volume at runtime) ---
+backend/storage/
+
+# --- Dev / CI ---
+.git/
+.gitignore
+.claude/
+*.bat
+setup_check.py
+
+# --- SDK (not needed inside container) ---
+sdk/
+
+# --- Misc ---
+*.md
+*.log
+.DS_Store
+Thumbs.db

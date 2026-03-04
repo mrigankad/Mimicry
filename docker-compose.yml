@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  mimicry:
+    build: .
+    image: mimicry:latest
+    container_name: mimicry
+    ports:
+      - "8000:8000"
+    volumes:
+      # Model weights (~800 MB) persist across container rebuilds
+      - hf_cache:/root/.cache/huggingface
+      # Voice profiles, outputs, history persist on the host
+      - ./backend/storage:/app/backend/storage
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+volumes:
+  hf_cache:
+    driver: local

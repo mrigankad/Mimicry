@@ -1,0 +1,45 @@
+# ── Python ─────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# ── Virtual environments ────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ── Runtime storage (auto-created, user data) ───────
+backend/storage/voices/
+backend/storage/embeddings/
+backend/storage/outputs/
+backend/storage/jobs.db
+
+# ── Secrets ─────────────────────────────────────────
+.env.local
+.env.production
+*.key
+
+# ── IDE / OS ─────────────────────────────────────────
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Claude Code ──────────────────────────────────────
+.claude/
+
+# ── Voice files (user content) ───────────────────────
+*.mimicry
+
+# ── Logs ─────────────────────────────────────────────
+*.log
