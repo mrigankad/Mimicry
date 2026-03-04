@@ -1,8 +1,8 @@
-# 🪞 Mimicry — Zero-Shot Voice Cloning
-
 <div align="center">
   <img src="assets/mascot.png" alt="Mimicry Mascot" width="250" />
 </div>
+
+# 🪞 Mimicry — Zero-Shot Voice Cloning
 
 Mimicry is a local, privacy-first voice cloning system. Upload a 5–30 second audio sample of any person speaking, and generate unlimited new speech in that voice from any text — with no training, no GPU required, no cloud dependency. Everything runs on your machine.
 
